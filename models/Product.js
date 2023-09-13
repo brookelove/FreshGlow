@@ -42,6 +42,13 @@ Product.init(
         key: "id",
       },
     },
+    cartItem: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "cart",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,

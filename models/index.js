@@ -65,6 +65,14 @@ Product.belongsToMany(User, {
   // as: 'product_tags',
   foreignKey: "product_id",
 });
+// Cart.js
+Cart.hasMany(Product, {
+  foreignKey: "cartId", // This should match the foreign key in CartItem
+  as: "cartItems", // An alias to access the cart items (optional)
+});
+Product.belongsTo(Cart, {
+  foreignKey: "cartId", // This should match the foreign key in CartItem
+});
 
 module.exports = {
   Category,
