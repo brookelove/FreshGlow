@@ -3,9 +3,10 @@ const express = require("express");
 const session = require("express-session");
 const { seedAll } = require("./seeds");
 const helpers = require("./utils/helpers");
-const { Category, Product, Tag, Comment, User, Order } = require("./models");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require("./config/connection");
