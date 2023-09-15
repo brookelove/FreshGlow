@@ -7,6 +7,7 @@ const sequelize = require("../config/connection");
 class Product extends Model {}
 
 // set up fields and rules for Product model
+//need to add image to model as a link
 Product.init(
   {
     id: {
@@ -26,6 +27,10 @@ Product.init(
         isDecimal: true,
       },
     },
+    image_url: {
+      type: DataTypes.STRING,
+      allowNull: true, // Images might be optional
+    },
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -39,13 +44,6 @@ Product.init(
       allowNull: true,
       references: {
         model: "category",
-        key: "id",
-      },
-    },
-    cartItem: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "cart",
         key: "id",
       },
     },
