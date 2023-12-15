@@ -29,7 +29,19 @@ Product.init(
     },
     image_url: {
       type: DataTypes.STRING,
-      allowNull: true, // Images might be optional
+      allowNull: true,
+    },
+    quick_description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    long_description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    isFeatured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
     },
     stock: {
       type: DataTypes.INTEGER,

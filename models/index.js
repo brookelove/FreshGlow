@@ -53,16 +53,16 @@ User.hasMany(Order, {
   onDelete: "CASCADE",
 });
 
-// User belongToMany Products (through ProductTag)
-User.belongsToMany(Product, {
-  through: Order,
-  // as: 'product_tags',
+//Product have many Order
+Product.hasMany(Order, {
+  foreignKey: "product_id",
+});
+
+Order.belongsTo(User, {
   foreignKey: "user_id",
 });
-// User belongToMany Products (through ProductTag)
-Product.belongsToMany(User, {
-  through: Order,
-  // as: 'product_tags',
+
+Order.belongsTo(Product, {
   foreignKey: "product_id",
 });
 

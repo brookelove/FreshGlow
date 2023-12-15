@@ -44,10 +44,43 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-  Order.create(req.body)
-    .then((order) => res.status(200).json(order))
-    .catch((err) => res.status(404).json(err));
+router.post("/", async (req, res) => {
+  try {
+    const { orderItems } = req.body;
+
+    const totalPrice = orderItems
+      .reduce((total, item) => {
+        return total + parseFloat(item.price) * item.quantity;
+      }, 0)
+      .toFixed(2);
+
+    console.log(totalPrice);
+
+    const order = await Order.create({
+      userId: req.session.userId,
+      total_price: totalPrice,
+    });
+
+    orderItems.forEach(async (item) => {
+      await OrderItem.create({
+        orderId: order.id,
+        productId: item.productId,
+        quantity: item.quantity,
+      });
+    });
+
+    // mapping through each orderItems then spread it it then and grabing each orderItems id
+    const productsInfo = orderItems.map((item) => ({
+      ...item,
+      orderId: order.id,
+    }));
+
+    await Product.bulkCreate(productsInfo);
+
+    res.status(200).json(order);
+  } catch (err) {
+    res.status(404).json(err);
+  }
 });
 
 module.exports = router;

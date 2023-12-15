@@ -2,28 +2,28 @@ const { Tag } = require("../models");
 
 const tagData = [
   {
-    tag_name: "dewy",
+    tag_name: "MirrorSkinFinish",
   },
   {
-    tag_name: "matte",
+    tag_name: "GlowGetter",
   },
   {
-    tag_name: "blue",
+    tag_name: "EyesWideAwake",
   },
   {
-    tag_name: "red",
+    tag_name: "LusciousLips",
   },
   {
-    tag_name: "purple",
+    tag_name: "RadiantComplexion",
   },
   {
-    tag_name: "white",
+    tag_name: "Essentials",
   },
   {
-    tag_name: "glitter",
+    tag_name: "PamperYourself",
   },
   {
-    tag_name: "face",
+    tag_name: "YouthfulGlow",
   },
 ];
 

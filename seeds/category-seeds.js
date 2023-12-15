@@ -1,16 +1,11 @@
 const { Category } = require("../models");
 
 const categoryData = [
-  { category_name: "Lipstick" },
-  { category_name: "Foundation" },
-  { category_name: "Mascara" },
-  { category_name: "Eyeshadow" },
-  { category_name: "Blush" },
-  { category_name: "Eyeliner" },
-  { category_name: "Highlighter" },
-  { category_name: "Bronzer" },
-  { category_name: "Concealer" },
-  { category_name: "Makeup Brushes" },
+  { category_name: "Body" },
+  { category_name: "Face" },
+  { category_name: "Eyes" },
+  { category_name: "Hair" },
+  { category_name: "Lips" },
 ];
 
 const seedCategories = () => Category.bulkCreate(categoryData);
