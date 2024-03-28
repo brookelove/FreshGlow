@@ -154,6 +154,83 @@ const ProductData = [
     long_description:
       "Achieve a sun-kissed glow with Velvet Glow Bronzer Body Oil. Infused with bronzing agents and hydrating oils, this body oil nourishes your skin while imparting a radiant, bronzed finish.",
   },
+  {
+    product_name: "CucumberCool Facial Mist",
+    price: 12.49,
+    stock: 25,
+    image_url: "17.png",
+    category_id: 2,
+    isFeatured: false,
+    quick_description: "Refreshing mist for instant hydration.",
+    long_description:
+      "Revitalize your skin with CucumberCool Facial Mist. Infused with cucumber extracts, this mist delivers an instant burst of hydration, leaving your skin feeling refreshed and rejuvenated.",
+  },
+  {
+    product_name: "HydraGlow Hyaluronic Acid Serum",
+    price: 22.99,
+    stock: 30,
+    image_url: "12.png",
+    category_id: 2,
+    isFeatured: true,
+    quick_description: "Intensely hydrating serum for plump skin.",
+    long_description:
+      "Quench your skin's thirst with HydraGlow Hyaluronic Acid Serum. Formulated with potent hyaluronic acid, this serum deeply moisturizes, leaving your skin looking plump and radiant.",
+  },
+  {
+    product_name: "Rose Revive Toner",
+    price: 14.99,
+    stock: 20,
+    image_url: "14.png",
+    category_id: 2,
+    isFeatured: false,
+    quick_description: "Balancing toner for refreshed skin.",
+    long_description:
+      "Restore skin's balance with Rose Revive Toner. Enriched with rose extracts, this toner gently tones and refreshes, prepping your skin for better absorption of skincare products.",
+  },
+  {
+    product_name: "AquaBurst Night Cream",
+    price: 26.99,
+    stock: 22,
+    image_url: "15.png",
+    category_id: 2,
+    isFeatured: true,
+    quick_description: "Hydrating night cream for overnight renewal.",
+    long_description:
+      "Wake up to refreshed skin with AquaBurst Night Cream. Its rich, hydrating formula works overnight to replenish moisture, leaving your skin soft and rejuvenated by morning.",
+  },
+  {
+    product_name: "EssentialC Elixir Vitamin C Serum",
+    price: 19.49,
+    stock: 18,
+    image_url: "16.png",
+    category_id: 2,
+    isFeatured: false,
+    quick_description: "Brightening serum with Vitamin C boost.",
+    long_description:
+      "Illuminate your skin with EssentialC Elixir Vitamin C Serum. Packed with Vitamin C, this serum brightens, evens skin tone, and protects against environmental stressors.",
+  },
+  {
+    product_name: "GlowBloom Exfoliating Mask",
+    price: 16.49,
+    stock: 28,
+    image_url: "19.png",
+    category_id: 2,
+    isFeatured: true,
+    quick_description: "Exfoliating mask for radiant skin.",
+    long_description:
+      "Reveal radiant skin with GlowBloom Exfoliating Mask. This mask gently exfoliates, removing dead skin cells and impurities, leaving your skin smooth and glowing.",
+  },
+  {
+    product_name: "Calm Under The Eye Mask",
+    price: 20.49,
+    stock: 52,
+    image_url: "27.png",
+    category_id: 3,
+    isFeatured: true,
+    quick_description: "Brightening Under Eye Patch with Vitamin C boost.",
+    long_description:
+      "Reveal radiant eyes with Calm Under The Eye Mask. This mask gently calms and removes puffiness leaving your eyes smooth and glowing.",
+  },
 ];
 
 const seedProducts = () => Product.bulkCreate(ProductData);

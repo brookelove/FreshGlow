@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-// const { seedAll } = require("./seeds");
+const { seedAll } = require("./seeds");
 const helpers = require("./utils/helpers");
 const cors = require("cors");
 
@@ -63,7 +63,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(require("./controllers"));
 
 app.listen(PORT, async () => {
-  console.log(`App listening on port ${PORT}!`);
-  sequelize.sync();
-  console.log("Seed data generated successfully.");
+  try {
+    await sequelize.sync();
+    console.log("Database sync successful.");
+    // Seed database
+    await seedAll();
+    console.log("Seed data generated successfully.");
+  } catch (error) {
+    console.error("Error syncing database:", error);
+  }
 });
