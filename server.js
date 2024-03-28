@@ -67,7 +67,7 @@ app.listen(PORT, async () => {
     await sequelize.sync();
     console.log("Database sync successful.");
     // Seed database
-    await seedAll();
+    sequelize.sync();
     console.log("Seed data generated successfully.");
   } catch (error) {
     console.error("Error syncing database:", error);
